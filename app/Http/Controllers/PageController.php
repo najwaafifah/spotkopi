@@ -36,6 +36,7 @@ class PageController extends Controller
 
         // Fetch the ratings for this cafe (assuming a rating relationship exists)
         $ratings = Review::where('cafe_id', $cafe->id)->get();
+
         $averageRating = $cafe->reviews->avg('rating');
 
         // Return the view and pass both models
